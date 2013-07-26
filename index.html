@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ZA</title>
+</head>
+<body>
+
+
+<svg id="map"></svg>
+<div id="dataContainer">
+    <button data-bind="click: nationalPassFail">National Pass/Fail</button>
+    <button data-bind="click: nationalUrbanRural">National Urban/Rural</button>
+    <button data-bind="click: nationalPublicPrivate">National Public/Private</button>
+    <h2 data-bind="text: currentName"></h2>
+
+    <h1 data-bind="text: currentValue"></h1>
+
+    <h2 data-bind="text: currentData"></h2>
+    <input type="checkbox" name="public" data-bind="checked: showPublic">Public<br>
+    <input type="checkbox" name="public" data-bind="checked: showIndependent">Independent<br>
+    <input type="checkbox" name="urban" data-bind="checked: showUrban">Urban<br>
+    <input type="checkbox" name="urban" data-bind="checked: showRural">Rural<br><br>
+
+    <div>2012 Pass Rate: <span data-bind="text: minPass"></span>-<span data-bind="text: maxPass"></span></div>
+    <div class="sliderContainer">
+        <div id="slider-range"></div>
+    </div>
+    <h2>Schools shown:</h2>
+    <h1 data-bind="text: visibleSchools"></h1>
+    <button data-bind="click: resetFilters">Reset</button>
+</div>
+
+<link href="css/dw.css" rel='stylesheet' type='text/css'>
+<link href="css/jquery-ui-1.10.3.custom.min.css" rel='stylesheet' type='text/css'>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.2.2/d3.v3.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.4.4/underscore-min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/knockout/2.3.0/knockout-min.js"></script>
+<script src="http://d3js.org/topojson.v1.min.js"></script>
+<script src="js/jquery.ui.min.js"></script>
+<script src="js/index.js"></script>
+<script src="js/kmeans.js"></script>
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        DW.controllers.index().initialize();
+    });
+</script>
+</body>
+</html>
